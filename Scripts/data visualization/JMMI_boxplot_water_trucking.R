@@ -4,13 +4,15 @@ library("dplyr")
 library("plyr")
 library("ggplot2")
 library("reshape2")
+library("readr")
 
-working.directory <- "C:/Users/REACH/Documents/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JMMI)/4. Data Analysis" 
-setwd(working.directory)
+#Set wd
+setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JMMI)/4. Data Analysis/yemen_jmmi")
+
 
 #Import
 library(readr)
-df <- read_csv("Outputs/median_governorate_result_jan.csv")
+df <- read_csv("Outputs/median_governorate_result_feb.csv")
 
 ###Drop columns with empty headers
 #Each time you merge a dataframe in R, a column with row numbers is added with no header

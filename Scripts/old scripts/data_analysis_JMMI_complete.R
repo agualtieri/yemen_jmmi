@@ -8,13 +8,12 @@ library("reshape2")
 library("data.table")
 library("stringr")
 library("reachR")
+library("readr")
 
-working.directory <- "C:/Users/REACH/Documents/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JMMI)/4. Data Analysis" 
-setwd(working.directory)
+setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JMMI)/4. Data Analysis/yemen_jmmi")
 
 ## Import csv ## Remember to update the input's file name
-library(readr)
-df <- read_csv("Inputs/reach_jmmi_markets_validated_jan.csv")
+df <- read_csv("Inputs/reach_jmmi_markets_validated_feb.csv")
 
 ########################################################
 ## Calculating median prices per district/governorate ##
@@ -31,14 +30,12 @@ disaggregation_variable <-"district_ID"
 
 medians.by.districts <- data.selected %>% aggregate_median(disaggregation_variable)
 
-write.csv(medians.by.districts, file = 'Outputs/median_district_result_jan.csv', row.names = FALSE)
+write.csv(medians.by.districts, file = 'Outputs/median_district_result_feb.csv', row.names = FALSE)
 
 ### Before proceeding remember to move the newly created district dataframe to the inputs folder ###
 
 ## Calculating median per governorate ##
-rm(list=ls())
-library(readr)
-df <- read_csv("Inputs/median_district_result_jan.csv")
+df <- read_csv("Inputs/median_district_result_feb.csv")
 
 data.selected <- df %>%
   select("governorate_ID", "governorate_name", "district_ID", "district_name", contains("normalised"), "cost_cubic_meter", "exchange_rate_result")
@@ -47,13 +44,14 @@ disaggregation_variable <-"governorate_ID"
 
 medians.by.governorate <- data.selected %>% aggregate_median(disaggregation_variable)
 
-write.csv(medians.by.governorate, file = 'Outputs/median_governorate_result_jan.csv')
+write.csv(medians.by.governorate, file = 'Outputs/median_governorate_result_feb.csv')
 
   
 ## Calculating avg restocking times per governorate ##
 ######################################################
 
 ## Pivoting to select the columns of interest, and pivoting by grouping them by name and calculating the avg ##
+df <- read_csv("Inputs/reach_jmmi_markets_validated_feb.csv")
 
 df.restock.avg <- df %>%
   select(governorate_name, contains("restock")) %>%
@@ -124,7 +122,7 @@ df.water.source <- df %>%
   summarise(n = n()) %>%
   mutate(freq = n / sum(n))
 
-write.csv(df.water.source, file = 'Outputs/water_source_jan.csv')
+write.csv(df.water.source, file = 'Outputs/water_source.csv')
 
 ## Proportion of delivery costs ##
 
@@ -135,7 +133,7 @@ df.delivery.costs <- df %>%
   summarise(n = n()) %>%
   mutate(freq = n / sum(n))
 
-write.csv(df.delivery.costs, file = 'Outputs/delivery_costs_jan.csv')
+write.csv(df.delivery.costs, file = 'Outputs/delivery_costs.csv')
 
 ## Proportion of chlorinated water ##
 
@@ -146,7 +144,7 @@ df.chlorinated.water <- df %>%
   summarise(n = n()) %>%
   mutate(freq = n / sum(n))
 
-write.csv(df.chlorinated.water, file = 'Outputs/df_chlorinated_water_jan.csv')
+write.csv(df.chlorinated.water, file = 'Outputs/df_chlorinated_water_feb.csv')
 
 ## Proportion of type of owner ##
 df.owner <- df %>% 
@@ -156,7 +154,7 @@ df.owner <- df %>%
   summarise(n=n()) %>%
   mutate(freq = n/sum(n))
 
-write.csv(df.owner, file = 'Outputs/type_owner_jan.csv')
+write.csv(df.owner, file = 'Outputs/type_owner_feb.csv')
 
 
 #################################

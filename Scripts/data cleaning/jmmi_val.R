@@ -50,7 +50,7 @@ rm(list = ls())
 #data<-load_data(file = "./data/october2018.csv")
   
   library(readr)
-  data <- read_csv("data/january2019.csv")
+  data <- read_csv("data/february2019.csv")
 
 
 # standard cleaning checks:
