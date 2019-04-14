@@ -1,0 +1,5 @@
+date,calc_price_petrol,calc_price_diesel,calc_price_bottled_water,calc_price_treated_water,calc_price_soap,calc_price_laundry,calc_price_sanitary,cost_cubic_meter,exchange_rate
+12/1/2018,400,447.5,120,100,140,100,535,1800,500
+1/1/2019,410,410,117.5,120,130,100,527.5,1650,545
+2/1/2019,325,375,110,100,130,100,500,1500,580
+3/1/2019,365,430,120,114.375,135,104.5,525,1500,570.5

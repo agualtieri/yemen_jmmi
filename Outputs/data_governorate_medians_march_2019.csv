@@ -1,0 +1,18 @@
+"governorate_ID","country_name","country_ID","governorate_name","calc_price_petrol","calc_price_diesel","calc_price_bottled_water","calc_price_treated_water","calc_price_soap","calc_price_laundry","calc_price_sanitary","cost_cubic_meter","exchange_rate_result"
+"YE11","Yemen","YE","Ibb",365,430,120,450,125,85.454545455,480,2500,581
+"YE12","Yemen","YE","Abyan",340,375,120,100,204,80,550,2000,547.5
+"YE13","Yemen","YE","Amanat Al Asimah",365,430,100,85,140,100,525,1166,533
+"YE14","Yemen","YE","Al Bayda",390,450,150,120,170,180,600,5000,600
+"YE15","Yemen","YE","Taizz",375,412.5,107.5,100,150,109,500,1500,581.5
+"YE16","Yemen","YE","Al Jawf",375,435,110,310,100,100,850,900,570
+"YE17","Yemen","YE","Hajjah",375,430,120,128.75,129,104.5,600,3000,565
+"YE18","Yemen","YE","Al Hudaydah",375,405,120,78.75,128,100,384,2000,560
+"YE20","Yemen","YE","Dhamar",370,430,105,360,125,110,510,2600,588
+"YE21","Yemen","YE","Shabwah",320,363.75,100,150,135,124,575,2631.5,586
+"YE22","Yemen","YE","Sa'ada",375,430,120,200,150,140,680,1000,560
+"YE23","Yemen","YE","Sana'a",365,440,100,70,150,100,500,1375,578.75
+"YE24","Yemen","YE","Aden",290,355,137.5,85,135,143,512.5,3000,584
+"YE25","Yemen","YE","Lahj",312.5,375,150,100,150,104.5,550,1500,587
+"YE29","Yemen","YE","Amran",365,430,120,275,150,104.5,729,950,587.5
+"YE30","Yemen","YE","Al Dhale'e",327.5,377.5,110,100,210.5,77.5,525,2250,544.5
+"YE32","Yemen","YE","Socotra",230,230,120,NA,160,140,700,900,560

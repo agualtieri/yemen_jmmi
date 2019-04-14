@@ -31,7 +31,7 @@
 }
 
 
-.dependencies<-c("dplyr","ggplot2","ggthemes","reshape2","data.table","plyr", "readr")
+.dependencies<-c("dplyr","ggplot2","ggthemes","reshape2","data.table", "readr")
 .install_dependencies(.dependencies)
 .install_reachR(reinstall_if_exists = F)
 .load_dependencies(c(.dependencies,"reachR"))

@@ -33,15 +33,13 @@ rm(list = ls())
     
     .install_reachR(T)
 
-   
-    
-  require(reachR)
     
   # you might need some of these
   require("dplyr")
   require("knitr")
   require("data.table")
-  require("questionr")  
+  require("questionr") 
+  require("reachR")
   
   # set wd to this script's folder
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
@@ -50,18 +48,17 @@ rm(list = ls())
 #data<-load_data(file = "./data/october2018.csv")
   
   library(readr)
-  data <- read_csv("data/february2019.csv")
+  data <- read_csv("data/March_JMMI_ACTED.csv")
 
 
 # standard cleaning checks:
-
 issues<-rbind(
   data %>% data_validation_all_others,
-              data %>% data_validation_find_duplicates("row_id"), # usually check in UUID
+              data %>% data_validation_find_duplicates("_uuid"), # usually check in UUID
               data %>% data_validation_outliers
 )
 
-issues %>% write.csv("./output/potential_issues.csv")
+issues %>% write.csv("./output/potential_issues_ACTED.csv", row.names = FALSE)
 
 
 # percent by governorate:

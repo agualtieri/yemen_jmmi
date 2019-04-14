@@ -1,0 +1,55 @@
+"district_ID","country_name","country_ID","governorate_ID","governorate_name","district_name","calc_price_petrol","calc_price_diesel","calc_price_bottled_water","calc_price_treated_water","calc_price_soap","calc_price_laundry","calc_price_sanitary","cost_cubic_meter","exchange_rate_result"
+"YE1102","Yemen","YE","YE11","Ibb","Yarim",365,430,120,100,150,80,500,1200,578
+"YE1116","Yemen","YE","YE11","Ibb","Dhi As Sufal",365,430,130,500,120,90.90909091,450,3000,583
+"YE1118","Yemen","YE","YE11","Ibb","Al Mashannah",365,430,100,400,100,72.72727273,400,3000,580
+"YE1119","Yemen","YE","YE11","Ibb","Al Dhihar",365,430,120,500,130,110,500,2000,582
+"YE1303","Yemen","YE","YE13","Amanat Al Asimah","Az'zal",365,430,100,85,100,100,525,1166,525
+"YE1304","Yemen","YE","YE13","Amanat Al Asimah","Assafi'yah",365,430,100,65,100,100,575,1166,525
+"YE1306","Yemen","YE","YE13","Amanat Al Asimah","Al Wahdah",365,430,100,47.5,100,100,525,1500,525
+"YE1308","Yemen","YE","YE13","Amanat Al Asimah","Ma'ain",355,440,115,100,150,125,650,1125,557
+"YE1309","Yemen","YE","YE13","Amanat Al Asimah","Ath'thaorah",365,430,100,300,140,100,450,1700,560
+"YE1310","Yemen","YE","YE13","Amanat Al Asimah","Bani Al Harith",365,430,100,65,150,100,500,1050,586
+"YE1513","Yemen","YE","YE15","Taizz","As Silw",400,450,100,100,180,150,750,NA,600
+"YE1514","Yemen","YE","YE15","Taizz","Ash Shamayatayn",375,400,100,100,110,91,450,4400,583
+"YE1518","Yemen","YE","YE15","Taizz","Al Qahirah",340,340,100,80,150,120,700,1000,555
+"YE1520","Yemen","YE","YE15","Taizz","At Ta'iziyah",375,440,150,100,150,111,550,2000,585
+"YE1521","Yemen","YE","YE15","Taizz","Al Ma'afer",400,425,150,200,150,109,500,600,588
+"YE1522","Yemen","YE","YE15","Taizz","Al Mawasit",400,425,150,150,140,109,500,500,588
+"YE1610","Yemen","YE","YE16","Al Jawf","Bart Al Anan",375,435,110,310,100,100,850,900,570
+"YE1713","Yemen","YE","YE17","Hajjah","Qafl Shamer",440,370,100,87.5,128,86,700,4500,575
+"YE1715","Yemen","YE","YE17","Hajjah","Al Mahabishah",370,440,120,170,160,100,700,6500,570
+"YE1724","Yemen","YE","YE17","Hajjah","Bani Qa'is",375,430,120,NA,130,118,500,1500,560
+"YE1726","Yemen","YE","YE17","Hajjah","Najrah",375,430,120,NA,120,109,400,1200,560
+"YE1802","Yemen","YE","YE18","Al Hudaydah","Alluheyah",375,390,150,100,150,91,700,2500,570
+"YE1806","Yemen","YE","YE18","Al Hudaydah","Al Qanawis",370,380,150,87.5,130,109,700,2500,570
+"YE1807","Yemen","YE","YE18","Al Hudaydah","Az Zaydiyah",365,430,120,70,100,75,320,1000,530
+"YE1810","Yemen","YE","YE18","Al Hudaydah","Bajil",365,430,120,70,100,60,305,500,500
+"YE1817","Yemen","YE","YE18","Al Hudaydah","Bayt Al Faqiah",375,NA,107.5,55,100,100,350,2000,530
+"YE1819","Yemen","YE","YE18","Al Hudaydah","Hays",385,410,110,NA,133,98,400,1250,555
+"YE1820","Yemen","YE","YE18","Al Hudaydah","Al Khawkhah",370,400,105,NA,74,106.5,384,3000,582.5
+"YE1824","Yemen","YE","YE18","Al Hudaydah","Zabid",400,480,160,130,135,135,375,NA,565
+"YE1826","Yemen","YE","YE18","Al Hudaydah","At Tuhayat",420,375,140,NA,128,120,400,NA,NA
+"YE2007","Yemen","YE","YE20","Dhamar","Wusab As Safil",375,430,110,320,120,120,570,3200,590
+"YE2008","Yemen","YE","YE20","Dhamar","Dhamar City",365,430,100,400,130,100,450,2000,586
+"YE2113","Yemen","YE","YE21","Shabwah","Ataq",365,365,100,150,120,118,400,1388,587
+"YE2114","Yemen","YE","YE21","Shabwah","Habban",275,362.5,100,NA,150,130,750,3875,585
+"YE2203","Yemen","YE","YE22","Sa'ada","Monabbih",400,400,150,NA,160,140,700,3000,560
+"YE2204","Yemen","YE","YE22","Sa'ada","Ghamr",400,400,180,NA,100,180,680,1000,560
+"YE2209","Yemen","YE","YE22","Sa'ada","Saqayn",365,450,120,100,200,200,550,5000,580
+"YE2211","Yemen","YE","YE22","Sa'ada","Sahar",375,435,110,310,100,100,1000,800,580
+"YE2215","Yemen","YE","YE22","Sa'ada","Sa'adah",365,430,120,200,150,130,500,1000,555
+"YE2301","Yemen","YE","YE23","Sana'a","Hamdan",365,440,100,60,150,100,500,850,570.5
+"YE2302","Yemen","YE","YE23","Sana'a","Arhab",365,430,100,70,150,100,500,1375,587
+"YE2303","Yemen","YE","YE23","Sana'a","Nihm",370,450,100,NA,160,100,520,1300,NA
+"YE2304","Yemen","YE","YE23","Sana'a","Bani Hushaysh",365,430,100,60,150,100,500,1100,540
+"YE2305","Yemen","YE","YE23","Sana'a","Sanhan",370,450,140,100,120,150,600,4500,590
+"YE2312","Yemen","YE","YE23","Sana'a","Khwlan",365,430,100,NA,150,100,500,2000,565
+"YE2404","Yemen","YE","YE24","Aden","Al Buraiqeh",290,355,150,100,150,150,525,1000,588
+"YE2408","Yemen","YE","YE24","Aden","Khur Maksar",290,NA,125,70,120,136,500,5000,580
+"YE2508","Yemen","YE","YE25","Lahj","Al Milah",325,375,150,NA,150,118,550,2000,589
+"YE2515","Yemen","YE","YE25","Lahj","Tuban",300,375,150,100,150,91,550,1000,585
+"YE2912","Yemen","YE","YE29","Amran","Jabal Iyal Yazid",365,430,120,350,150,109,833,1000,585
+"YE2915","Yemen","YE","YE29","Amran","Amran",365,430,120,200,150,100,625,900,590
+"YE3003","Yemen","YE","YE30","Al Dhale'e","Qa'atabah",330,380,120,100,213,80,550,2000,544
+"YE3006","Yemen","YE","YE30","Al Dhale'e","Ad Dhale'e",325,375,100,100,208,75,500,2500,545
+"YE3201","Yemen","YE","YE32","Socotra","Hidaybu",230,230,120,NA,160,140,700,900,560

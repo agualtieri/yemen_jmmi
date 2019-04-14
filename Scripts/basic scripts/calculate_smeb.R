@@ -7,21 +7,21 @@ calculate.smeb <- function(data, level){
     #select only variable needed
     data %>% 
       dplyr::select("country_name", "country_ID", "governorate_ID", "governorate_name", "district_ID", "district_name", 
-                    contains("normalised"), "cost_cubic_meter") -> data.select
+                    contains("calc_price_"), "cost_cubic_meter") -> data.select
     
     #Calculate weights
     data.select %>%
-      dplyr::group_by(district_ID) %>%
+      dplyr::group_by(governorate_ID) %>%
       dplyr::mutate(
-        smeb_soap = price_soap_normalised*10.5,
-        smeb_laundry = price_laundry_powder_normalised*20,
-        smeb_napkins = price_sanitary_napkins_normalised*2,
+        smeb_soap = calc_price_soap*10.5,
+        smeb_laundry = calc_price_laundry*20,
+        smeb_napkins = calc_price_sanitary*2,
         smeb_cubic = cost_cubic_meter*3.15 
       ) -> data.select
     
     #Calculate proximity
       data.select %>% 
-      dplyr::group_by(district_ID) %>%
+      dplyr::group_by(governorate_ID) %>%
       dplyr::mutate(
         smeb_soap= ifelse(is.na(smeb_soap), median(smeb_soap, na.rm=T), smeb_soap),
         smeb_laundry= ifelse(is.na(smeb_laundry), median(smeb_laundry, na.rm=T), smeb_laundry),
@@ -48,15 +48,15 @@ calculate.smeb <- function(data, level){
     #select only variable needed
     data %>% 
       dplyr::select("country_name", "country_ID","governorate_ID", "governorate_name",
-                    contains("normalised"), "cost_cubic_meter") -> data.select
+                    contains("calc_price_"), "cost_cubic_meter") -> data.select
     
     #Calculate weights
     data.select %>%
       dplyr::group_by(governorate_ID) %>%
       dplyr::mutate(
-        smeb_soap = price_soap_normalised*10.5,
-        smeb_laundry = price_laundry_powder_normalised*20,
-        smeb_napkins = price_sanitary_napkins_normalised*2,
+        smeb_soap = calc_price_soap*10.5,
+        smeb_laundry = calc_price_laundry*20,
+        smeb_napkins = calc_price_sanitary*2,
         smeb_cubic = cost_cubic_meter*3.15 
     ) -> data.select
     
@@ -89,16 +89,16 @@ calculate.smeb <- function(data, level){
     #select only variable needed
     data %>% 
       dplyr::select("country_name", "country_ID",
-                    contains("normalised"), "cost_cubic_meter") -> data.select
+                    contains("calc_price_"), "cost_cubic_meter") -> data.select
     
 
     #Calculate weights
     data.select %>%
       dplyr::group_by(country_ID) %>%
       dplyr::mutate(
-        smeb_soap = price_soap_normalised*10.5,
-        smeb_laundry = price_laundry_powder_normalised*20,
-        smeb_napkins = price_sanitary_napkins_normalised*2,
+        smeb_soap = calc_price_soap*10.5,
+        smeb_laundry = calc_price_laundry*20,
+        smeb_napkins = calc_price_sanitary*2,
         smeb_cubic = cost_cubic_meter*3.15 
     ) -> data.select
     
@@ -121,14 +121,14 @@ calculate.smeb <- function(data, level){
     #select only variable needed
     data %>% 
       dplyr::select("country_name", "country_ID", "governorate_ID", "governorate_name", "district_ID", "district_name", 
-                    "market_name", contains("normalised"), "cost_cubic_meter") -> data.select
+                    "market_name", contains("calc_price_"), "cost_cubic_meter") -> data.select
     
     ## Created weighted values for each item
     data.select %>%
       dplyr::mutate(
-        smeb_soap = price_soap_normalised*10.5,
-        smeb_laundry = price_laundry_powder_normalised*20,
-        smeb_napkins = price_sanitary_napkins_normalised*2,
+        smeb_soap = calc_price_soap*10.5,
+        smeb_laundry = calc_price_laundry*20,
+        smeb_napkins = calc_price_sanitary*2,
         smeb_cubic = cost_cubic_meter*3.15 
       ) -> data.select
     

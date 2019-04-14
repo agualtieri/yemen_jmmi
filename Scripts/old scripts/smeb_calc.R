@@ -17,28 +17,28 @@ setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JM
 df <- read_csv("Inputs/median_district_result_feb.csv")
 
 ## Portion dataset for calculation ##
-data.smeb <- df %>% select("governorate_ID", "governorate_name","district_ID", "district_name", "price_soap_normalised", "price_laundry_powder_normalised", "price_sanitary_napkins_normalised", "cost_cubic_meter")
+data.smeb <- data.medians.district %>% dplyr::select("governorate_ID", "governorate_name","district_ID", "district_name", "calc_price_soap", "calc_price_laundry", "calc_price_sanitary", "cost_cubic_meter")
 
 ## Soap - Calculate weighted value of Soap and replace NA with governorate median ##
-data.smeb$smeb_soap <- data.smeb$price_soap_normalised*10.5
+data.smeb$smeb_soap <- data.smeb$calc_price_soap*10.5
 data.smeb <- data.smeb %>% group_by(governorate_ID) %>% mutate(smeb_soap= ifelse(is.na(smeb_soap), median(smeb_soap, na.rm=T), smeb_soap))
 
 ## Laundry Powder - Calculate weighted value of Laundry Powder and replace NA with governorate median ##
-data.smeb$smeb_laundry <- data.smeb$price_laundry_powder_normalised*20
+data.smeb$smeb_laundry <- data.smeb$calc_price_laundry*20
 data.smeb <- data.smeb %>% group_by(governorate_ID) %>% mutate(smeb_laundry= ifelse(is.na(smeb_laundry), median(smeb_laundry, na.rm=T), smeb_laundry))
 
 ## Sanitary Napkins - Calcualte the weighted value of Sanitary Napkins and replace NA with governorate median ##
-data.smeb$smeb_napkins <- data.smeb$price_sanitary_napkins_normalised*2
+data.smeb$smeb_napkins <- data.smeb$calc_price_sanitary*2
 data.smeb <- data.smeb %>% group_by(governorate_ID) %>% mutate(smeb_napkins= ifelse(is.na(smeb_napkins), median(smeb_napkins, na.rm=T), smeb_napkins))
 
 ## Water trucking - Calcualte the weighted value of Water Trucking and replace NA with governorate median ##
 data.smeb$smeb_cubic <- data.smeb$cost_cubic_meter*3.15
-data.smeb <- data.smeb %>% group_by(governorate_ID) %>% mutate(smeb_cubic= ifelse(is.na(smeb_cubic), median(smeb_cubic, na.rm=T), smeb_cubic))
+data.smeb <- data.smeb %>% group_by(governorate_ID) %>% mutate(smeb_cubic= ifelse(is.na(smeb_cubic), median(cost_cubic_meter*3.15, na.rm=T), smeb_cubic))
 
 
 ## Total District level WASH SMEB Cost ##
 data.smeb$smeb_total <- rowSums(data.smeb[,c(9,10,11,12)], na.rm=FALSE)
-write.csv(data.smeb, file = 'Outputs/median_district_SMEB_result_feb.csv', row.names = FALSE)
+write.csv(data.smeb, file = 'Outputs/median_district_SMEB_result_march.csv', row.names = FALSE)
 
 
 ## Calculate national median ##

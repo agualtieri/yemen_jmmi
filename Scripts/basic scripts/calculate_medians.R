@@ -1,5 +1,6 @@
 # Calculate district medians
 calculate.medians <- function(data, level){
+  
       
     if (level == "district_ID") {
       
@@ -7,11 +8,10 @@ calculate.medians <- function(data, level){
       data %>% 
         dplyr::select("country_name", "country_ID", "governorate_ID", 
                       "governorate_name", "district_ID", "district_name", 
-                      contains("normalised"), "cost_cubic_meter", "exchange_rate_result") -> data.select
+                      contains("calc_price_"), "cost_cubic_meter", "exchange_rate_result") -> dist.select
       
       #Aggregate medians
-      data.select %>% 
-       aggregate_median(level) -> data.select
+      dist.select %>% aggregate_median(level)
       
     } 
     else if (level == "governorate_ID") {
@@ -19,12 +19,11 @@ calculate.medians <- function(data, level){
       # Select data
       data %>% 
         dplyr::select("country_name", "country_ID", "governorate_ID", 
-                      "governorate_name", contains("normalised"), 
-                      "cost_cubic_meter", "exchange_rate_result") -> data.select
+                      "governorate_name", contains("calc_price_"), 
+                      "cost_cubic_meter", "exchange_rate_result") -> gov.select
       
       #Aggregate medians
-      data.select %>% 
-        aggregate_median(level) -> data.select
+      gov.select %>% aggregate_median(level) 
       
       
     } 
@@ -32,12 +31,11 @@ calculate.medians <- function(data, level){
       
       # Select data
       data %>% 
-        dplyr::select("country_name", "country_ID", contains("normalised"), 
-                      "cost_cubic_meter", "exchange_rate_result") -> data.select
+        dplyr::select("country_name", "country_ID", contains("calc_price_"), 
+                      "cost_cubic_meter", "exchange_rate_result") -> country.select
       
       #Aggregate medians
-      data.select %>% 
-        aggregate_median(level) -> data.select
+      country.select %>% aggregate_median(level)
       
       
     } 
@@ -47,12 +45,11 @@ calculate.medians <- function(data, level){
       data %>% 
         dplyr::select("country_name", "country_ID", "governorate_ID", 
                       "governorate_name", "district_ID", "district_name", 
-                      "market_name", contains("normalised"), "cost_cubic_meter", 
-                      "exchange_rate_result") -> data.select
+                      "market_name", contains("calc_price_"), "cost_cubic_meter", 
+                      "exchange_rate_result") -> market.select
       
       #Aggregate medians
-      data.select %>% 
-        aggregate_median(level) -> data.select
+      market.select %>%  aggregate_median(level)
       
       
     }
