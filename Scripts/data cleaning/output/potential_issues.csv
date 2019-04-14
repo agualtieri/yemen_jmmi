@@ -1,89 +1,91 @@
-"","index","value","variable","has_issue","issue_type"
-"2",NA,"20 \\ 8 instance(s)","diesel_quantity_other",NA,"'other' response. may need recoding."
-"4",NA,"15 \\ 15 instance(s)","bottled_quantity_other",NA,"'other' response. may need recoding."
-"5",NA,"4 \\ 1 instance(s)","treated_quantity_other",NA,"'other' response. may need recoding."
-"6",NA,"5 \\ 16 instance(s)","treated_quantity_other",NA,"'other' response. may need recoding."
-"7",NA,"20 \\ 17 instance(s)","treated_quantity_other",NA,"'other' response. may need recoding."
-"8",NA,"110 \\ 1 instance(s)","treated_quantity_other",NA,"'other' response. may need recoding."
-"9",NA,"110 \\ 48 instance(s)","laundry_quantity_other",NA,"'other' response. may need recoding."
-"10",NA,"500 \\ 4 instance(s)","laundry_quantity_other",NA,"'other' response. may need recoding."
-"11",NA,"4800 \\ 15 instance(s)","laundry_quantity_other",NA,"'other' response. may need recoding."
-"12",NA,"5280 \\ 1 instance(s)","laundry_quantity_other",NA,"'other' response. may need recoding."
-"13",NA,"9 \\ 3 instance(s)","napkins_quantity_other",NA,"'other' response. may need recoding."
-"14",NA,"144 \\ 3 instance(s)","napkins_quantity_other",NA,"'other' response. may need recoding."
-"15",NA,"240 \\ 6 instance(s)","napkins_quantity_other",NA,"'other' response. may need recoding."
-"1",215,"7000","price_petrol",TRUE,"normal distribution outlier"
-"210",224,"6700","price_petrol",TRUE,"normal distribution outlier"
-"3",225,"6700","price_petrol",TRUE,"normal distribution outlier"
-"410",226,"6700","price_petrol",TRUE,"normal distribution outlier"
-"510",227,"6800","price_petrol",TRUE,"normal distribution outlier"
-"610",228,"6500","price_petrol",TRUE,"normal distribution outlier"
-"76",229,"6500","price_petrol",TRUE,"normal distribution outlier"
-"81",230,"6500","price_petrol",TRUE,"normal distribution outlier"
-"91",215,"7000","price_diesel",TRUE,"normal distribution outlier"
-"101",224,"7900","price_diesel",TRUE,"normal distribution outlier"
-"111",225,"6750","price_diesel",TRUE,"normal distribution outlier"
-"121",226,"7900","price_diesel",TRUE,"normal distribution outlier"
-"131",227,"7800","price_diesel",TRUE,"normal distribution outlier"
-"141",228,"7500","price_diesel",TRUE,"normal distribution outlier"
-"151",229,"7500","price_diesel",TRUE,"normal distribution outlier"
-"16",230,"7500","price_diesel",TRUE,"normal distribution outlier"
-"17",80,"2000","price_bottled_water",TRUE,"normal distribution outlier"
-"18",81,"2000","price_bottled_water",TRUE,"normal distribution outlier"
-"19",84,"2000","price_bottled_water",TRUE,"normal distribution outlier"
-"20",87,"2100","price_bottled_water",TRUE,"normal distribution outlier"
-"21",88,"2200","price_bottled_water",TRUE,"normal distribution outlier"
-"22",89,"2200","price_bottled_water",TRUE,"normal distribution outlier"
-"23",91,"2200","price_bottled_water",TRUE,"normal distribution outlier"
-"24",92,"1750","price_bottled_water",TRUE,"normal distribution outlier"
-"25",194,"2050","price_bottled_water",TRUE,"normal distribution outlier"
-"26",195,"2100","price_bottled_water",TRUE,"normal distribution outlier"
-"27",196,"2200","price_bottled_water",TRUE,"normal distribution outlier"
-"28",202,"2000","price_bottled_water",TRUE,"normal distribution outlier"
-"29",203,"2000","price_bottled_water",TRUE,"normal distribution outlier"
-"30",215,"2200","price_bottled_water",TRUE,"normal distribution outlier"
-"31",216,"1701","price_treated_water",TRUE,"normal distribution outlier"
-"32",216,"3402","calc_price_treated_water",TRUE,"normal distribution outlier"
-"33",80,"8000","price_soap",TRUE,"normal distribution outlier"
-"34",81,"8600","price_soap",TRUE,"normal distribution outlier"
-"35",84,"8500","price_soap",TRUE,"normal distribution outlier"
-"36",87,"7000","price_soap",TRUE,"normal distribution outlier"
-"37",88,"7500","price_soap",TRUE,"normal distribution outlier"
-"38",89,"6500","price_soap",TRUE,"normal distribution outlier"
-"39",91,"7200","price_soap",TRUE,"normal distribution outlier"
-"40",92,"7000","price_soap",TRUE,"normal distribution outlier"
-"41",93,"7100","price_soap",TRUE,"normal distribution outlier"
-"42",95,"7000","price_soap",TRUE,"normal distribution outlier"
-"43",194,"7500","price_soap",TRUE,"normal distribution outlier"
-"44",195,"7500","price_soap",TRUE,"normal distribution outlier"
-"45",202,"8000","price_soap",TRUE,"normal distribution outlier"
-"46",203,"8200","price_soap",TRUE,"normal distribution outlier"
-"47",215,"7200","price_soap",TRUE,"normal distribution outlier"
-"48",93,"3944.444444","calc_price_soap",TRUE,"normal distribution outlier"
-"49",80,"4800","price_laundry_powder",TRUE,"normal distribution outlier"
-"50",81,"4800","price_laundry_powder",TRUE,"normal distribution outlier"
-"51",84,"4700","price_laundry_powder",TRUE,"normal distribution outlier"
-"52",87,"4700","price_laundry_powder",TRUE,"normal distribution outlier"
-"53",88,"4550","price_laundry_powder",TRUE,"normal distribution outlier"
-"54",89,"4500","price_laundry_powder",TRUE,"normal distribution outlier"
-"55",194,"4800","price_laundry_powder",TRUE,"normal distribution outlier"
-"56",195,"7500","price_laundry_powder",TRUE,"normal distribution outlier"
-"57",202,"4800","price_laundry_powder",TRUE,"normal distribution outlier"
-"58",203,"4800","price_laundry_powder",TRUE,"normal distribution outlier"
-"59",12,"500","calc_price_laundry",TRUE,"normal distribution outlier"
-"60",88,"7500","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"61",91,"7200","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"62",92,"7000","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"63",194,"7800","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"64",195,"7800","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"65",203,"7000","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"66",215,"7600","price_sanitary_napkins",TRUE,"normal distribution outlier"
-"67",70,"90","capacity_truck",TRUE,"normal distribution outlier"
-"68",71,"90","capacity_truck",TRUE,"normal distribution outlier"
-"69",72,"90","capacity_truck",TRUE,"normal distribution outlier"
-"70",73,"90","capacity_truck",TRUE,"normal distribution outlier"
-"71",74,"90","capacity_truck",TRUE,"normal distribution outlier"
-"72",75,"90","capacity_truck",TRUE,"normal distribution outlier"
-"73",256,"4","cost_cubic_meter",TRUE,"log normal distribution outlier"
-"74",244,"15000","location_source",TRUE,"normal distribution outlier"
-"75",244,"30000","distance_travelled",TRUE,"normal distribution outlier"
+index,value,variable,has_issue,issue_type
+1,8000,price_soap,TRUE,normal distribution outlier
+8,60,capacity_truck,TRUE,normal distribution outlier
+9,27,capacity_truck,TRUE,normal distribution outlier
+10,36,capacity_truck,TRUE,normal distribution outlier
+11,30000,additional_cost_10,TRUE,normal distribution outlier
+12,275,calc_price_petrol,TRUE,log normal distribution outlier
+13,275,calc_price_petrol,TRUE,log normal distribution outlier
+14,1700,price_bottled_water,TRUE,normal distribution outlier
+14,7700,price_soap,TRUE,normal distribution outlier
+14,13600,price_sanitary_napkins,TRUE,log normal distribution outlier
+20,1800,price_bottled_water,TRUE,normal distribution outlier
+20,6500,price_soap,TRUE,normal distribution outlier
+21,1800,price_bottled_water,TRUE,normal distribution outlier
+21,7300,price_soap,TRUE,normal distribution outlier
+22,7500,price_soap,TRUE,normal distribution outlier
+23,1800,price_bottled_water,TRUE,normal distribution outlier
+23,6100,price_soap,TRUE,normal distribution outlier
+24,1700,price_bottled_water,TRUE,normal distribution outlier
+24,7200,price_soap,TRUE,normal distribution outlier
+24,38400,calc_price_soap,TRUE,normal distribution outlier
+25,1700,price_bottled_water,TRUE,normal distribution outlier
+25,7500,price_soap,TRUE,normal distribution outlier
+28,2100,price_bottled_water,TRUE,normal distribution outlier
+29,2100,price_bottled_water,TRUE,normal distribution outlier
+29,8000,price_soap,TRUE,normal distribution outlier
+29,8000,price_laundry_powder,TRUE,log normal distribution outlier
+47,8000,distance_travelled,TRUE,normal distribution outlier
+58,7500,price_petrol,TRUE,normal distribution outlier
+58,8700,price_diesel,TRUE,normal distribution outlier
+59,7500,price_petrol,TRUE,normal distribution outlier
+59,8500,price_diesel,TRUE,normal distribution outlier
+60,7600,price_petrol,TRUE,normal distribution outlier
+60,8600,price_diesel,TRUE,normal distribution outlier
+67,7500,price_petrol,TRUE,normal distribution outlier
+67,8600,price_diesel,TRUE,normal distribution outlier
+68,7500,price_petrol,TRUE,normal distribution outlier
+68,8500,price_diesel,TRUE,normal distribution outlier
+69,7500,price_petrol,TRUE,normal distribution outlier
+69,8700,price_diesel,TRUE,normal distribution outlier
+69,1,calc_price_diesel,TRUE,normal distribution outlier
+70,7500,price_petrol,TRUE,normal distribution outlier
+70,8600,price_diesel,TRUE,normal distribution outlier
+71,7500,price_petrol,TRUE,normal distribution outlier
+71,8600,price_diesel,TRUE,normal distribution outlier
+72,7500,price_petrol,TRUE,normal distribution outlier
+72,8600,price_diesel,TRUE,normal distribution outlier
+82,8000,cost_cubic_meter,TRUE,normal distribution outlier
+83,2200,price_bottled_water,TRUE,normal distribution outlier
+84,2200,price_bottled_water,TRUE,normal distribution outlier
+88,480,calc_price_petrol,TRUE,log normal distribution outlier
+92,5760,price_laundry_powder,TRUE,log normal distribution outlier
+92,101,exchange_rate_result,TRUE,normal distribution outlier
+93,8000,price_petrol,TRUE,normal distribution outlier
+93,5760,price_laundry_powder,TRUE,log normal distribution outlier
+93,101,exchange_rate_result,TRUE,normal distribution outlier
+94,101,exchange_rate_result,TRUE,normal distribution outlier
+118,20000,distance_travelled,TRUE,normal distribution outlier
+NA,15 \\ 11 instance(s),bottled_quantity_other,NA,'other' response. may need recoding.
+NA,5 \\ 9 instance(s),treated_quantity_other,NA,'other' response. may need recoding.
+NA,20 \\ 7 instance(s),treated_quantity_other,NA,'other' response. may need recoding.
+NA,15 \\ 1 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,75 \\ 3 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,85 \\ 5 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,100 \\ 14 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,900 \\ 4 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,5400 \\ 1 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,5760 \\ 2 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,6120 \\ 5 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,8640 \\ 1 instance(s),soap_quantity_other,NA,'other' response. may need recoding.
+NA,90 \\ 3 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,100 \\ 1 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,110 \\ 18 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,500 \\ 2 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,700 \\ 3 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,4800 \\ 11 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,5280 \\ 2 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,8640 \\ 1 instance(s),laundry_quantity_other,NA,'other' response. may need recoding.
+NA,8 \\ 9 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,9 \\ 4 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,16 \\ 1 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,24 \\ 4 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,144 \\ 1 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,180 \\ 2 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,216 \\ 1 instance(s),napkins_quantity_other,NA,'other' response. may need recoding.
+NA,2 \\ 1 instance(s),mrk_supply_issues_other,NA,'other' response. may need recoding.
+NA,3 \\ 1 instance(s),mrk_supply_issues_other,NA,'other' response. may need recoding.
+NA,4 \\ 1 instance(s),mrk_supply_issues_other,NA,'other' response. may need recoding.
+NA,5 \\ 1 instance(s),mrk_supply_issues_other,NA,'other' response. may need recoding.
+NA,6 \\ 1 instance(s),mrk_supply_issues_other,NA,'other' response. may need recoding.
+NA,7 \\ 1 instance(s),mrk_supply_issues_other,NA,'other' response. may need recoding.
