@@ -179,7 +179,7 @@ df.cash <- current.month.analysis %>%
 
 mean.cash <- colMeans(df.cash == TRUE, na.rm = TRUE)
 
-write.csv(mean.cash, file = paste0("Outputs/cash_",current_month,".csv"), row.names = FALSE)
+write.csv(mean.cash, file = paste0("Outputs/cash_",current_month,".csv"), row.names = TRUE)
 
 ## Water trucking analysis
 ## Summary statistics for water trucking (median truck capacity, median distance from location, median additional costs)
