@@ -18,6 +18,7 @@ source("./Scripts/basic scripts/delete_observations.R")
 # Load calculators
 source("./Scripts/basic scripts/calculate_smeb.R")
 source("./Scripts/basic scripts/calculate_medians.R")
+source("./Scripts/basic scripts/multiple_response.R")
 
 
 # Months -> update according to the month being analyzed
@@ -150,28 +151,11 @@ df.restock.avg <- current.month.analysis %>%
 write.csv(df.restock.avg, file = paste0("Outputs/restock_times_",current_month,".csv"), row.names = FALSE)
 
 ## Proportion challenges per vendor 
-## Manipulation of data: selection of challenge columns
-df.challenges <- current.month.analysis %>%
-  tidyr::unite(AllConstraints, c(fuel_constraints_multiple, wash_constraints_multiple, constraints_multiple), sep = " ", remove = TRUE) %>% dplyr::select(AllConstraints)
+mean_challenges <- multiple.response(current.month.analysis, c("fuel_constraints_multiple/", "wash_constraints_multiple/", "constraints_multiple/"))
 
-## TRUE/FALSE when challenge is mentionned in row
-df.challenges$challengeprice_inflation <- stringr::str_detect(df.challenges$AllConstraints, "Price") == TRUE
-df.challenges$challengeliquidityshortage <- stringr::str_detect(df.challenges$AllConstraints, "Liquidity") == TRUE
-df.challenges$challengeshortagedemand <- stringr::str_detect(df.challenges$AllConstraints, "demand") == TRUE
-df.challenges$challengeinsecurityinstability <- stringr::str_detect(df.challenges$AllConstraints, "Insecurity") == TRUE
-df.challenges$challengesupplyshortage <- stringr::str_detect(df.challenges$AllConstraints, "Supply") == TRUE
-df.challenges$challengegovernmentregulations <- stringr::str_detect(df.challenges$AllConstraints, "Government") == TRUE
-df.challenges$challengetransportationissues <- stringr::str_detect(df.challenges$AllConstraints, "Transportation") == TRUE
-df.challenges$challengeother <- stringr::str_detect(df.challenges$AllConstraints, "Other") == TRUE
-df.challenges$challengedonotknow <- stringr::str_detect(df.challenges$AllConstraints, "Do_not_know") == TRUE
-df.challenges$challengenoconstraints <- stringr::str_detect(df.challenges$AllConstraints, "No_constraints") == TRUE
-df.challenges$challengevendordidnotanswer <- stringr::str_detect(df.challenges$AllConstraints, "Vendor") == TRUE
-
-## Calculate the proportion of challenges
-mean_challenges <- colMeans(df.challenges == "TRUE", na.rm = FALSE)
-
-write.csv(mean_challenges, file = paste0("Outputs/challenges_",current_month,".csv"), row.names = TRUE)
-
+write.csv(mean_challenges[["fuel_constraints_multiple/"]], file = paste0("Outputs/fuel_challenges_",current_month,".csv"), row.names = TRUE)
+write.csv(mean_challenges[["wash_constraints_multiple/"]], file = paste0("Outputs/fuel_challenges_",current_month,".csv"), row.names = TRUE)
+write.csv(mean_challenges[["constraints_multiple/"]], file = paste0("Outputs/fuel_challenges_",current_month,".csv"), row.names = TRUE)
 
 ## Calculation of CASH proportions
 df.cash <- current.month.analysis %>%
@@ -232,38 +216,26 @@ write.csv(df.owner, file = paste0("Outputs/type_owner_",current_month,".csv"), r
 
 
 ## Issues affecting supply chain ##
-## Manipulation of data: selection of challenge columns
-mrkt.supply.issues <- current.month.analysis %>%
-  tidyr::unite(AllConstraints, mrk_supply_issues, sep = " ", remove = TRUE) %>% dplyr::select(AllConstraints)
+## % of Vendor KIs reporting issues affecting supply chain
+supply.yesno <- current.month.analysis %>% 
+  dplyr::select(mrk_supply_routes) %>%
+  filter(!is.na(mrk_supply_routes)) %>%
+  group_by(mrk_supply_routes) %>%
+  summarise(n=n()) %>%
+  mutate(freq = n/sum(n))
 
-## TRUE/FALSE when issue is mentionned in row
-mrkt.supply.issues$issue.dmg.market <- stringr::str_detect(mrkt.supply.issues$AllConstraints, "dmg_infra_market") == TRUE
-mrkt.supply.issues$issue.dmg.area <- stringr::str_detect(mrkt.supply.issues$AllConstraints, "dmg_infra_sorrounding") == TRUE
-mrkt.supply.issues$issue.dmg.storage <- stringr::str_detect(mrkt.supply.issues$AllConstraints, "dmg_storage") == TRUE
-mrkt.supply.issues$issue.movement <- stringr::str_detect(mrkt.supply.issues$AllConstraints, "move_restriction") == TRUE
-mrkt.supply.issues$isssue.noanswer <- stringr::str_detect(mrkt.supply.issues$AllConstraints, "did_not_answer") == TRUE
+write.csv(supply.yesno, file = paste0("Outputs/market_supply_yesno_",current_month,".csv"), row.names = FALSE)
 
-## Calculate the proportion of challenges
-mean.supply.issues <- colMeans(mrkt.supply.issues == "TRUE", na.rm = FALSE)
+## Multiple response - issues affecting supply chain
+issues.supply <- multiple.response(current.month.analysis, "mrk_supply_issues/")
 
-write.csv(mean.supply.issues, file = paste0("Outputs/market_supply_issues_",current_month,".csv"), row.names = TRUE)
+write.csv(issues.supply[["mrk_supply_issues/"]], file = paste0("Outputs/market_supply_issues_",current_month,".csv"), row.names = FALSE)
 
 
 ## Infrastrcutural damage ##
-infra.damage <- current.month.analysis %>%
-  tidyr::unite(AllConstraints, mrk_dmg_infra, sep = " ", remove = TRUE) %>% dplyr::select(AllConstraints)
+infra.damage <- multiple.response(current.month.analysis, "mrk_dmg_infra/")
 
-## TRUE/FALSE when issue is mentionned in row
-infra.damage$dmg.road <- stringr::str_detect(infra.damage$AllConstraints, "road") == TRUE
-infra.damage$dmg.electrical <- stringr::str_detect(infra.damage$AllConstraints, "electrical") == TRUE
-infra.damage$dmg.water <- stringr::str_detect(infra.damage$AllConstraints, "water") == TRUE
-infra.damage$dmg.communication <- stringr::str_detect(infra.damage$AllConstraints, "communication") == TRUE
-infra.damage$dmg.other <- stringr::str_detect(infra.damage$AllConstraints, "other") == TRUE
-
-## Calculate the proportion of challenges
-mean.infra.damage <- colMeans(infra.damage == "TRUE", na.rm = FALSE)
-
-write.csv(mean.infra.damage, file = paste0("Outputs/infra_damage_",current_month,".csv"), row.names = TRUE)
+write.csv(infra.damage[["mrk_dmg_infra/"]], file = paste0("Outputs/infra_damage_",current_month,".csv"), row.names = TRUE)
 
 ## Supply increase: FUEL ##
 supply.increase.fuel50 <- current.month.analysis %>%
