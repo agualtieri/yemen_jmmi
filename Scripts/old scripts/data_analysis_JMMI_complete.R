@@ -66,7 +66,7 @@ write.csv(df.restock.avg, file = 'Outputs/avg_restocking_times_result.csv')
 
 ## Manipulation of data: selection of challenge columns ##
 
-df.challenges <- df %>%
+df.challenges <- data.frame.validated %>%
   unite(AllConstraints, c(fuel_constraints_multiple, wash_constraints_multiple, constraints_multiple), sep = " ", remove = TRUE) %>% select(AllConstraints)
 
 ## TRUE/FALSE when challenge is mentionned in row ##

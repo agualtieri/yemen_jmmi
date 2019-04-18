@@ -10,7 +10,7 @@ library("readr")
 setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JMMI)/4. Data Analysis/yemen_jmmi")
 
 #Import
-df <- read_csv("Outputs/median_governorate_result_feb.csv")
+df <- read_csv("Outputs/governorate_smeb_march_2019.csv")
 
 ###Drop columns with empty headers
 #Each time you merge a dataframe in R, a column with row numbers is added with no header
@@ -27,14 +27,13 @@ df <- df[!empty.cols]
 ####################
 
 #Create Item List
-items_list <- c("price_petrol_normalised",
-               "price_diesel_normalised",
-               "price_bottled_water_normalised",
-               "price_treated_water_normalised",
-               "price_soap_normalised",
-               "price_laundry_powder_normalised",
-               "price_sanitary_napkins_normalised",
-               "price_sanitary_napkins_normalised")
+items_list <- c("calc_price_petrol",
+               "calc_price_diesel",
+               "calc_price_bottled_water",
+               "calc_price_treated_water",
+               "calc_price_soap",
+               "calc_price_laundry_powder",
+               "calc_price_sanitary")
 
 #Create Metadata list of variables to subset df.
 metadata_list <- c("governorate_name")
@@ -52,14 +51,14 @@ bind_cols(metadata, items) -> items_data
 items_tidy <- melt(items_data)
 
 #Rename Fuel Item so as to be presentable on Plot.
-items_tidy$variable<-sub("price_diesel_normalised","Diesel\n(1 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_petrol_normalised","Petrol\n(1 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_bottled_water_normalised","Bottled\nwater\n(0.75 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_treated_water_normalised","Treated\nwater\n(10 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_soap_normalised","Soap\n(1 Unit)",items_tidy$variable)
-items_tidy$variable<-sub("price_laundry_powder_normalised","Laundry\npowder\n(100 g)",items_tidy$variable)
-items_tidy$variable<-sub("price_sanitary_napkins_normalised","Sanitary\nnapkins\n(10 Units)",items_tidy$variable)
-items_tidy$variable<-sub("price_sanitary_napkins_normalised","Sanitary\nnapkins\n(10 Units)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_diesel","Diesel\n(1 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_petrol","Petrol\n(1 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_bottled_water","Bottled\nwater\n(0.75 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_treated_water","Treated\nwater\n(10 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_soap","Soap\n(1 Unit)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_laundry_powder","Laundry\npowder\n(100 g)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_sanitary","Sanitary\nnapkins\n(10 Units)",items_tidy$variable)
+
 
 ############
 # Boxplots #

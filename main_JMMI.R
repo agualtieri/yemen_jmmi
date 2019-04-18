@@ -173,7 +173,6 @@ df.water.trucking.median <- current.month.analysis %>%
 
 write.csv(df.water.trucking.median, file = paste0("Outputs/water_trucking_",current_month,".csv"), row.names = FALSE)
 
-
 ## Proportion of water source mentioned ##
 df.water.source <- current.month.analysis %>%
   dplyr::select(type_water) %>%
