@@ -18,8 +18,8 @@ add.pcodes<-function(data){
   
  
   #Merge
-  data <- dplyr::left_join(data, admin2_merge, by = "district_name") 
-  data <- dplyr::left_join(data, admin1_merge, by = "governorate_name")
+  data <- dplyr::left_join(data, admin2_merge, by = "district_ID") 
+  data <- dplyr::left_join(data, admin1_merge, by = "governorate_ID")
   
   #Add Country name and code
   data$country_name <- "Yemen"

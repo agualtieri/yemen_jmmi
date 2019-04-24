@@ -21,19 +21,19 @@ source("./Scripts/basic scripts/calculate_medians.R")
 
 
 # Months -> update according to the month being analyzed
-current_month <- "march_2019"
+current_month <- "april_2019"
 
 # Load cleaned dataset
-data.frame <- read_csv("./Inputs/march2019.csv")
+data.frame <- read_csv("./Inputs/april2019.csv")
 data.frame
 
 # Add Pcodes or Locatin names to data.frame and move them at the beginning of the data.frame
-#data.frame.named <- add.pcodes(data.frame.validated)
-#data.frame.named <- data.frame.pcodes[moveme(names(data.frame.pcodes), "country_name after date_survey; country_ID after country_name; governorate_ID after governorate_name; district_ID after district_name")]
+data.frame.named <- add.pcodes(data.frame)
+data.frame.named <- data.frame.named[moveme(names(data.frame.named), "country_name after date_survey; country_ID after country_name; governorate_ID after governorate_name; district_ID after district_name")]
 
                       
 ## Delete the empty columns of price display ##
-data.frame.validated <- dplyr::select(data.frame, -c("wash_list", "price_cubic_meter", "note_exchange_rate", contains("display"), contains("normalised")))
+data.frame.validated <- dplyr::select(data.frame.named, -c("wash_list", "price_cubic_meter", "note_exchange_rate", contains("display"), contains("normalised")))
 
 ## Delete districts that have less than 3 observations (see. methodology)
 data.frame.validated <- delete.districts(data.frame.validated, "district_ID", 3)
