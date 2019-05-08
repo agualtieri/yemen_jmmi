@@ -22,22 +22,22 @@ source("./Scripts/basic scripts/multiple_response.R")
 
 
 # Months -> update according to the month being analyzed
-current_month <- "march_2019"
+current_month <- "april_2019"
 
 # Load cleaned dataset
-data.frame <- read_csv("./Inputs/march2019.csv")
+data.frame <- read_csv("./Inputs/april2019.csv")
 data.frame
 
+## Delete the empty columns of price display ##
+data.frame <- dplyr::select(data.frame, -c("start", "end", "today", "deviceid", "enumerator_id", "select_one_organisation_name", "org_name_other", "wash_list", "price_cubic_meter", "note_exchange_rate", contains("display"), contains("normalised"), "__version__", "_id", "_submission_time", "_validation_status", "_index"))
+
 # Add Pcodes or Locatin names to data.frame and move them at the beginning of the data.frame
-#data.frame.named <- add.pcodes(data.frame.validated)
-#data.frame.named <- data.frame.pcodes[moveme(names(data.frame.pcodes), "country_name after date_survey; country_ID after country_name; governorate_ID after governorate_name; district_ID after district_name")]
+data.frame.named <- add.location(data.frame)
+data.frame.named<- data.frame.named[moveme(names(data.frame.named), "country_name after date_survey; country_ID after country_name; governorate_name after country_ID; governorate_ID after governorate_name; district_name after governorate_ID; district_ID after district_name")]
 
                       
-## Delete the empty columns of price display ##
-data.frame.validated <- dplyr::select(data.frame, -c("wash_list", "price_cubic_meter", "note_exchange_rate", contains("display"), contains("normalised")))
-
 ## Delete districts that have less than 3 observations (see. methodology)
-data.frame.validated <- delete.districts(data.frame.validated, "district_ID", 3)
+data.frame.validated <- delete.districts(data.frame.named, "district_ID", 3)
 
 ## Save final dataset ###
 write.csv(data.frame.validated, file = paste0("./Outputs/final_validated_",current_month,".csv"), row.names = FALSE)
@@ -101,7 +101,7 @@ write.csv(country_smeb, file = paste0("Outputs/country_smeb_",current_month,".cs
 
 
 # Calculate percentage change (I still need to create a function for this)
-# Import CVS file - the file needs to be created manually by merging the governorate level medians##
+# Import CVS file - the file needs to be created manually by merging the governorate level medians ##
 ts <- read_csv("Inputs/timeseries/JMMI_timeseries_R_v2.csv")
 #ts$date <- as.Date(ts$date, format="%d/%m/%Y")
 ts$date <- lubridate::dmy(ts$date)
