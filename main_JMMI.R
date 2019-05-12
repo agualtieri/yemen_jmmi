@@ -24,9 +24,15 @@ source("./Scripts/basic scripts/multiple_response.R")
 # Months -> update according to the month being analyzed
 current_month <- "april_2019"
 
-# Load cleaned dataset
-data.frame <- read_csv("./Inputs/april2019.csv")
+# Load cleaned dataset from kobo server
+datasets <- kobo_datasets(user = "reach_yemen:KOBOyemREACH2017", api = "kobohr") # copy the formid of the dataset you want to process
+
+# download the dataset you want to process
+data.frame <- kobo_data_downloader(formid = "360811", user = "reach_yemen:KOBOyemREACH2017", api = "kobohr")
 data.frame
+
+# check number of submission
+kobo_submission_count("360811", user = "reach_yemen:KOBOyemREACH2017", api = "kobohr")
 
 ## Delete the empty columns of price display ##
 data.frame <- dplyr::select(data.frame, -c("start", "end", "today", "deviceid", "enumerator_id", "select_one_organisation_name", "org_name_other", "wash_list", "price_cubic_meter", "note_exchange_rate", contains("display"), contains("normalised"), "__version__", "_id", "_submission_time", "_validation_status", "_index"))
@@ -65,8 +71,8 @@ write.csv(data.smeb.governorate, file = paste0("Outputs/data_governorate_SMEB_",
 ## Select only consecutive months
 # Import CVS file ##
 # Load previous and current month from cleaned datasets -> needs to be updated
-previous.month <- read_csv("Outputs/final_validated_february_2019.csv")
-current.month <- read_csv("Outputs/final_validated_march_2019.csv")
+previous.month <- read_csv("Outputs/final_validated_march_2019.csv")
+current.month <- read_csv("Outputs/final_validated_april_2019.csv")
 
 # Select unique ID from current month to match on previous month
 uniqueID <- unique(previous.month$district_ID)

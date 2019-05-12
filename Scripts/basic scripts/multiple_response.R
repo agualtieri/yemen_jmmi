@@ -22,5 +22,3 @@ multiple.response <- function(data, question.prefix) {
   temp
 }
 
-
-test <- multiple.response(current.month.analysis, "mrk_supply_issues/")
