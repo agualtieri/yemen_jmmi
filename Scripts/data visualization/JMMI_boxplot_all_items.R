@@ -10,7 +10,10 @@ library("readr")
 setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JMMI)/4. Data Analysis/yemen_jmmi")
 
 #Import
-df <- read_csv("Outputs/median_governorate_result_feb.csv")
+df <- read_csv("Outputs/governorate_smeb_april_2019.csv")
+
+# Months -> update according to the month being analyzed
+current_month <- "april_2019"
 
 ###Drop columns with empty headers
 #Each time you merge a dataframe in R, a column with row numbers is added with no header
@@ -27,24 +30,23 @@ df <- df[!empty.cols]
 ####################
 
 #Create Item List
-items_list <- c("price_petrol_normalised",
-               "price_diesel_normalised",
-               "price_bottled_water_normalised",
-               "price_treated_water_normalised",
-               "price_soap_normalised",
-               "price_laundry_powder_normalised",
-               "price_sanitary_napkins_normalised",
-               "price_sanitary_napkins_normalised")
+items_list <- c("calc_price_petrol",
+               "calc_price_diesel",
+               "calc_price_bottled_water",
+               "calc_price_treated_water",
+               "calc_price_soap",
+               "calc_price_laundry",
+               "calc_price_sanitary")
 
 #Create Metadata list of variables to subset df.
 metadata_list <- c("governorate_name")
 
 #Create New Dataframe with only necessary metadata and items prices.
 df %>%
-  select(one_of(metadata_list)) -> metadata
+  dplyr::select(one_of(metadata_list)) -> metadata
 
 df %>%
-  select(one_of(items_list)) -> items
+  dplyr::select(one_of(items_list)) -> items
 
 bind_cols(metadata, items) -> items_data
 
@@ -52,14 +54,14 @@ bind_cols(metadata, items) -> items_data
 items_tidy <- melt(items_data)
 
 #Rename Fuel Item so as to be presentable on Plot.
-items_tidy$variable<-sub("price_diesel_normalised","Diesel\n(1 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_petrol_normalised","Petrol\n(1 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_bottled_water_normalised","Bottled\nwater\n(0.75 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_treated_water_normalised","Treated\nwater\n(10 L)",items_tidy$variable)
-items_tidy$variable<-sub("price_soap_normalised","Soap\n(1 Unit)",items_tidy$variable)
-items_tidy$variable<-sub("price_laundry_powder_normalised","Laundry\npowder\n(100 g)",items_tidy$variable)
-items_tidy$variable<-sub("price_sanitary_napkins_normalised","Sanitary\nnapkins\n(10 Units)",items_tidy$variable)
-items_tidy$variable<-sub("price_sanitary_napkins_normalised","Sanitary\nnapkins\n(10 Units)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_diesel","Diesel\n(1 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_petrol","Petrol\n(1 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_bottled_water","Bottled\nwater\n(0.75 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_treated_water","Treated\nwater\n(10 L)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_soap","Soap\n(1 Unit)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_laundry","Laundry\npowder\n(100 g)",items_tidy$variable)
+items_tidy$variable<-sub("calc_price_sanitary","Sanitary\nnapkins\n(10 Units)",items_tidy$variable)
+
 
 ############
 # Boxplots #
@@ -69,6 +71,8 @@ items_tidy$variable<-sub("price_sanitary_napkins_normalised","Sanitary\nnapkins\
 #(Note, need to fix water decimals, but can do manually if needed)
 # This calculates the quantiles, median, min and max #
 items_tidy$variable <-with(items_tidy,reorder(variable,value,function(x) -  median(x, na.rm=TRUE)))
+items_tidy$variable <- factor(items_tidy$variable,
+                              levels = c('Petrol\n(1 L)','Diesel\n(1 L)','Bottled\nwater\n(0.75 L)','Treated\nwater\n(10 L)','Soap\n(1 Unit)','Laundry\npowder\n(100 g)','Sanitary\nnapkins\n(10 Units)'), ordered = T)
 f <- function(x) {
   r <- quantile(x, probs = c(0.00, 0.25, 0.5, 0.75, 1))
   names(r) <- c("ymin", "lower", "middle", "upper", "ymax")
@@ -78,7 +82,7 @@ medians <- ddply(items_tidy, .(variable), summarise, med = median(value,na.rm=TR
 mins <- ddply(items_tidy, .(variable), summarise, min = min(value,na.rm=TRUE))
 max <- ddply(items_tidy, .(variable), summarise, max = max(value,na.rm=TRUE))
 
-pdf("Visuals/boxplot_all_items2.pdf", width=13, height=6)
+pdf(paste0("Visuals/boxplot_all_items2_",current_month,".pdf"), width=13, height=6)
 #Graphics/Boxplots/
 #C:/Users/User/Links/Desktop/
 
@@ -93,5 +97,7 @@ plot<-plot +
   geom_text(data = max, aes(x=variable, y = max, label = format(round(max,digits=0), nsmall=0)), size = 4, vjust = -0.5) +
   theme(axis.text.x = element_text(angle = 0, size = 12, hjust = 0.5, color = "black"))
 plot
+
+
 dev.off()
 

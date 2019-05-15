@@ -12,7 +12,10 @@ setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JM
 
 #Import
 library(readr)
-df <- read_csv("Outputs/median_governorate_result_feb.csv")
+df <- read_csv("Outputs/governorate_smeb_april_2019.csv")
+
+# Months -> update according to the month being analyzed
+current_month <- "april_2019"
 
 ###Drop columns with empty headers
 #Each time you merge a dataframe in R, a column with row numbers is added with no header
@@ -36,10 +39,10 @@ metadata_list <- "governorate_name"
 
 #Create New Dataframe with only necessary metadata and food prices.
 df %>%
-  select(one_of(metadata_list)) -> metadata
+  dplyr::select(one_of(metadata_list)) -> metadata
 
 df %>%
-  select(one_of(truck_list)) -> truck
+  dplyr::select(one_of(truck_list)) -> truck
 
 bind_cols(metadata, truck) -> truck_data
 
@@ -66,7 +69,7 @@ medians <- ddply(truck_tidy, .(variable), summarise, med = median(value,na.rm=TR
 mins <- ddply(truck_tidy, .(variable), summarise, min = min(value,na.rm=TRUE))
 max <- ddply(truck_tidy, .(variable), summarise, max = max(value,na.rm=TRUE))
 
-pdf("Visuals/boxplot_water_truck1.pdf", width=3, height=6)
+pdf(past0("Visuals/boxplot_water_truck1_",current_month,".pdf"), width=3, height=6)
 ?pdf
 #Graphics/Boxplots/
 #C:/Users/User/Links/Desktop/
