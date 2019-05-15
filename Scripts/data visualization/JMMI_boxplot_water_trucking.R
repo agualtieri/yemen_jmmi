@@ -12,10 +12,14 @@ setwd("~/REACH Yemen/2. Cash & Markets/1. Joint Market Monitoring Initiative (JM
 
 #Import
 library(readr)
+<<<<<<< HEAD
 df <- read_csv("Outputs/governorate_smeb_april_2019.csv")
 
 # Months -> update according to the month being analyzed
 current_month <- "april_2019"
+=======
+df <- read_csv("Outputs/median_governorate_result_feb.csv")
+>>>>>>> master
 
 ###Drop columns with empty headers
 #Each time you merge a dataframe in R, a column with row numbers is added with no header
