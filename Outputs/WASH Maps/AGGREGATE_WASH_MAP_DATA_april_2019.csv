@@ -1,0 +1,48 @@
+"district_ID","district_name","country_name.y","country_ID.y","governorate_ID.y","governorate_name.y","type_area","Norm_Dist_Mean","Norm_Price_Mean","Norm_Dist_Median","Norm_Price_Median","Dist_Quart_Score_Mean","Price_Quart_Score_Mean","Tot_Quart_Score_Mean","Dist_Quart_Score_Med","Price_Quart_Score_Med","Tot_Quart_Score_Med.y","Single_Score_Mean","Single_Score_Med"
+"YE1302","Shu'aub","Yemen","YE","YE13","Amanat Al Asimah","Urban",4,1155.33333333333,4,1333,"Low","Low","Low Low","Low","Med","Low Med",251.777777777778,311
+"YE1303","Az'zal","Yemen","YE","YE13","Amanat Al Asimah","Urban",4,1372.66666666667,4,1333,"Low","Med","Low Med","Low","Med","Low Med",324.222222222222,311
+"YE1306","Al Wahdah","Yemen","YE","YE13","Amanat Al Asimah","Urban",4,1500,4,1500,"Low","Med","Low Med","Low","Med","Low Med",366.666666666667,366.666666666667
+"YE1309","Ath'thaorah","Yemen","YE","YE13","Amanat Al Asimah","Urban",2,2166.66666666667,2,1800,"Low","Med","Low Med","Low","Med","Low Med",1766.66666666667,1400
+"YE1310","Bani Al Harith","Yemen","YE","YE13","Amanat Al Asimah","Urban",9.33333333333333,1116.66666666667,10,1150,"Med","Low","Med Low","Med","Low","Med Low",85.978835978836,87.3015873015873
+"YE1413","Rada'","Yemen","YE","YE14","Al Bayda","Rural",6,4666.66666666667,6,4500,"Low","High","Low High","Low","High","Low High",870.555555555556,820
+"YE1505","Al  Mukha","Yemen","YE","YE15","Taizz","Urban",NA,NA,NA,NA,NA,NA,NA,"0","0","0 0",NA,NA
+"YE1508","Jabal Habashy","Yemen","YE","YE15","Taizz","Urban",25,1871.5,20,1683,"High","Med","High Med","High","Med","High Med",60.780701754386,64.9824561403509
+"YE1512","Dimnat Khadir","Yemen","YE","YE15","Taizz","Urban",12.2,2700,9.5,2000,"Med","Med","Med Med","Med","Med","Med Med",219.710944026734,230.952380952381
+"YE1513","As Silw","Yemen","YE","YE15","Taizz","Rural",NA,NA,NA,NA,NA,NA,NA,"0","0","0 0",NA,NA
+"YE1514","Ash Shamayatayn","Yemen","YE","YE15","Taizz","Urban",20,3500,20,3500,"High","High","High High","High","High","High High",163.157894736842,163.157894736842
+"YE1520","At Ta'iziyah","Yemen","YE","YE15","Taizz","Urban",12.0666666666667,2813.33333333333,9,2000,"Med","Med","Med Med","Med","Med","Med Med",241.594671544762,228.571428571429
+"YE1521","Al Ma'afer","Yemen","YE","YE15","Taizz","Rural",10,2000,10,2000,"Med","Med","Med Med","Med","Med","Med Med",177.777777777778,177.777777777778
+"YE1522","Al Mawasit","Yemen","YE","YE15","Taizz","Rural",15,1600,15,1600,"Med","Med","Med Med","Med","Med","Med Med",85.7142857142857,85.7142857142857
+"YE1713","Qafl Shamer","Yemen","YE","YE17","Hajjah","Rural",16,3000,20,3000,"High","Med","High Med","High","Med","High Med",215.037593984962,136.842105263158
+"YE1715","Al Mahabishah","Yemen","YE","YE17","Hajjah","Rural",25,7000,25,7000,"High","High","High High","High","High","High High",280.293405928615,275
+"YE1722","Ku'aydinah","Yemen","YE","YE17","Hajjah","Even Obs",17.5,3250,17.5,3250,"High","High","High High","High","High","High High",179.135338345865,179.135338345865
+"YE1724","Bani Qa'is","Yemen","YE","YE17","Hajjah","Rural",10,3000,10,3000,"Med","Med","Med Med","Med","Med","Med Med",288.888888888889,288.888888888889
+"YE1726","Najrah","Yemen","YE","YE17","Hajjah","Urban",NA,NA,NA,NA,NA,NA,NA,"0","0","0 0",NA,NA
+"YE1802","Alluheyah","Yemen","YE","YE18","Al Hudaydah","Rural",10,4000,10,4000,"Med","High","Med High","Med","High","Med High",400,400
+"YE1806","Al Qanawis","Yemen","YE","YE18","Al Hudaydah","Rural",11.6666666666667,2666.66666666667,10,2500,"Med","Med","Med Med","Med","Med","Med Med",224.074074074074,233.333333333333
+"YE1807","Az Zaydiyah","Yemen","YE","YE18","Al Hudaydah","Rural",20,1250,20,1250,"High","Med","High Med","High","Med","High Med",44.7368421052632,44.7368421052632
+"YE1810","Bajil","Yemen","YE","YE18","Al Hudaydah","Urban",6,850,6,850,"Low","Low","Low Low","Low","Low","Low Low",316.666666666667,316.666666666667
+"YE1817","Bayt Al Faqiah","Yemen","YE","YE18","Al Hudaydah","Urban",5,1750,5,1750,"Low","Med","Low Med","Low","Med","Low Med",337.5,337.5
+"YE1820","Al Khawkhah","Yemen","YE","YE18","Al Hudaydah","Urban",8.5,2000,8.5,2000,"Med","Med","Med Med","Med","Med","Med Med",222.222222222222,222.222222222222
+"YE1824","Zabid","Yemen","YE","YE18","Al Hudaydah","Urban",NA,NA,NA,NA,NA,NA,NA,"0","0","0 0",NA,NA
+"YE2007","Wusab As Safil","Yemen","YE","YE20","Dhamar","Rural",5.22222222222222,3411.11111111111,5,3500,"Low","High","Low High","Low","High","Low High",725.185185185185,720
+"YE2113","Ataq","Yemen","YE","YE21","Shabwah","Urban",28,1063.33333333333,27,960,"High","Low","High Low","High","Low","High Low",25.0151640474221,23.3333333333333
+"YE2114","Habban","Yemen","YE","YE21","Shabwah","Rural",8.5,3000,8.5,3000,"Med","Med","Med Med","Med","Med","Med Med",361.111111111111,361.111111111111
+"YE2203","Monabbih","Yemen","YE","YE22","Sa'ada","Rural",18.3333333333333,566.666666666667,20,500,"High","Low","High Low","High","Low","High Low",8.7719298245614,5.26315789473684
+"YE2204","Ghamr","Yemen","YE","YE22","Sa'ada","Rural",18.3333333333333,1166.66666666667,20,1200,"High","Med","High Med","High","Med","High Med",45.3634085213033,47.3684210526316
+"YE2205","Razih","Yemen","YE","YE22","Sa'ada","Rural",36.6666666666667,1066.66666666667,35,1000,"High","Low","High Low","High","Low","High Low",18.8536953242836,17.6470588235294
+"YE2209","Saqayn","Yemen","YE","YE22","Sa'ada","Rural",7.33333333333333,3533.33333333333,7,3500,"Low","High","Low High","Med","High","Med High",497.619047619048,516.666666666667
+"YE2301","Hamdan","Yemen","YE","YE23","Sana'a","Even Obs",9,950,9,950,"Med","Low","Med Low","Med","Low","Med Low",69.0476190476191,69.0476190476191
+"YE2302","Arhab","Yemen","YE","YE23","Sana'a","Rural",10,1400,10,1400,"Med","Med","Med Med","Med","Med","Med Med",111.111111111111,111.111111111111
+"YE2303","Nihm","Yemen","YE","YE23","Sana'a","Rural",10,1500,10,1500,"Med","Med","Med Med","Med","Med","Med Med",122.222222222222,122.222222222222
+"YE2304","Bani Hushaysh","Yemen","YE","YE23","Sana'a","Urban",9,1125,9,1125,"Med","Low","Med Low","Med","Low","Med Low",94.0476190476191,94.0476190476191
+"YE2305","Sanhan","Yemen","YE","YE23","Sana'a","Urban",6.66666666666667,4333.33333333333,7,4500,"Low","High","Low High","Med","High","Med High",701.111111111111,683.333333333333
+"YE2307","Bani Matar","Yemen","YE","YE23","Sana'a","Urban",7.66666666666667,4166.66666666667,7,4200,"Med","High","Med High","Med","High","Med High",570.833333333333,566.666666666667
+"YE2312","Khwlan","Yemen","YE","YE23","Sana'a","Rural",2,1833.33333333333,2,2000,"Low","Med","Low Med","Low","Med","Low Med",Inf,1600
+"YE2404","Al Buraiqeh","Yemen","YE","YE24","Aden","Urban",10,3250,10,3250,"Med","High","Med High","Med","High","Med High",316.666666666667,316.666666666667
+"YE2408","Khur Maksar","Yemen","YE","YE24","Aden","Urban",10,5000,10,5000,"Med","High","Med High","Med","High","Med High",511.111111111111,511.111111111111
+"YE2508","Al Milah","Yemen","YE","YE25","Lahj","Rural",12,1500,12,1500,"Med","Med","Med Med","Med","Med","Med Med",100,100
+"YE2515","Tuban","Yemen","YE","YE25","Lahj","Urban",12.5,500,12.5,500,"Med","Low","Med Low","Med","Low","Med Low",9.12698412698413,9.12698412698413
+"YE2912","Jabal Iyal Yazid","Yemen","YE","YE29","Amran","Urban",10,1200,10,1200,"Med","Med","Med Med","Med","Med","Med Med",88.8888888888889,88.8888888888889
+"YE2915","Amran","Yemen","YE","YE29","Amran","Urban",10,900,10,900,"Med","Low","Med Low","Med","Low","Med Low",55.5555555555556,55.5555555555556
+"YE3201","Hidaybu","Yemen","YE","YE32","Socotra","Urban",20,800,20,800,"High","Low","High Low","High","Low","High Low",21.0526315789474,21.0526315789474
