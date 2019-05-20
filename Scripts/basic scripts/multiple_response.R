@@ -22,3 +22,8 @@ multiple.response <- function(data, question.prefix) {
   temp
 }
 
+
+
+
+
+mean_challenges <- multiple.response(final_validated_march_2019, c("fuel_constraints_multiple/", "wash_constraints_multiple/", "constraints_multiple/"))
